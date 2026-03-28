@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  testing-my-gh-action-yo:
+    runs-on: debian-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+      - name: installing dependencies and building
+        run: mvn clean build -DskipTests
+      - name: running tests
+        run: mvn test
