@@ -12,6 +12,6 @@ jobs:
       - name: installing dependencies 
         run: mvn clean package
       - name: building project
-        run: mvn run build
+        run: mvn compile
       - name: running tests
         run: mvn test
