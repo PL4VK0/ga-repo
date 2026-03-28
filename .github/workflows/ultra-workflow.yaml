@@ -9,7 +9,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6
-      - name: installing dependencies and building
-        run: mvn clean build -DskipTests
+      - name: installing dependencies 
+        run: mvn clean package
+      - name: building project
+        run: mvn run build
       - name: running tests
         run: mvn test
